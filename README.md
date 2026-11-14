@@ -4,6 +4,8 @@ EquiSumm is an AI-assisted document summarization and verification tool designed
 
 > **Architecture Documentation:** For detailed design specifications, data contracts, and memory management diagrams, see [ARCHITECTURE.md](ARCHITECTURE.md).
 
+> **React + FastAPI application:** The migration implementation lives in `frontend/` and `backend/`; startup and API details are in [README_REACT_FASTAPI.md](README_REACT_FASTAPI.md). The original Streamlit app under `app/` is preserved for feature-parity comparison.
+
 ---
 
 ## Key Features
@@ -53,6 +55,8 @@ app/
     4_Evaluate.py         # Benchmark runner and high-ROUGE factuality divergence report
     5_Embeddings.py       # 2D t-SNE sentence embedding scatter plot
     6_Runs_and_Settings.py # Saved runs history, GPU memory monitor, settings, and self-test
+backend/                   # FastAPI REST facade and serial background job manager
+frontend/                  # React + Vite + Tailwind client
 samples/                  # 6 sample inputs for legal, financial, and benchmark use cases
 tests/                    # Pytest test suite (15 unit tests)
 config.yaml               # System settings and reranker weights
