@@ -163,6 +163,7 @@ Deep learning inference (BART generation, cross-attention, RoBERTa NLI) is compu
 
 | Endpoint | Method | Purpose |
 |---|---|---|
+<<<<<<< HEAD
 | `/api/health` | `GET` | Health status and queued/running job counts |
 | `/api/samples` | `GET` | List pre-packaged sample documents (earnings, contract, bill, memo) |
 | `/api/samples/{id}` | `GET` | Fetch specific sample document text and domain |
@@ -276,3 +277,13 @@ equiisum/
 ├── README.md                 # Project overview and quickstart guide
 └── ARCHITECTURE.md           # System design specification (this document)
 ```
+=======
+| **Verify (Home)** | `Home.py` | Document ingestion, sentence verdict highlighting (green/amber/red), interactive premise inspector, decision banner. |
+| **Fact Check** | `pages/1_Fact_Check.py` | Side-by-side audit table for all numbers and entities with status/issue filtering. |
+| **Attention Explorer** | `pages/2_Attention_Explorer.py` | Cross-attention heatmap, source coverage bar, and token entropy line chart. |
+| **Compare Candidates** | `pages/3_Compare_Candidates.py` | All beam candidates compared with ROUGE-free quality signals and "Why Not #1?" explanation. |
+| **Evaluate** | `pages/4_Evaluate.py` | Benchmark runner comparing ROUGE vs NLI/fact precision; detects metric divergence. |
+| **Embeddings** | `pages/5_Embeddings.py` | 2D t-SNE scatter plot of sentences (max 300 points, cached per session). |
+| **Runs & Settings** | `pages/6_Runs_and_Settings.py` | Run history manager, GPU VRAM allocation monitor, threshold configuration, offline self-test. |
+
+>>>>>>> origin/main
