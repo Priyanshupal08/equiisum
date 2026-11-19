@@ -19,6 +19,12 @@ export default {
           DEFAULT: 'var(--color-green)',
           soft: 'var(--color-green-soft)',
         },
+        alert: {
+          DEFAULT: 'var(--color-alert)',
+          ink: 'var(--color-alert-ink)',
+          soft: 'var(--color-alert-soft)',
+          rule: 'var(--color-alert-rule)',
+        },
         contour: 'var(--color-contour)',
         water: 'var(--color-water)',
         hedge: 'var(--color-hedge)',
@@ -32,12 +38,12 @@ export default {
         mono: ['var(--font-outlier)', 'ui-monospace', 'monospace'],
       },
       borderRadius: {
-        card: 'var(--radius-card)',
+        panel: 'var(--radius-card)',
         entry: 'var(--radius-entry)',
         pill: 'var(--radius-pill)',
       },
       boxShadow: {
-        card: 'var(--shadow-card)',
+        panel: 'var(--shadow-card)',
         lift: 'var(--shadow-lift)',
         moulded: 'inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 0 -1px 0 rgba(0, 0, 0, 0.12)',
         'moulded-dark': 'inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.25)',
