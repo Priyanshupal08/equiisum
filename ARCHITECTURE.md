@@ -163,7 +163,6 @@ Deep learning inference (BART generation, cross-attention, RoBERTa NLI) is compu
 
 | Endpoint | Method | Purpose |
 |---|---|---|
-<<<<<<< HEAD
 | `/api/health` | `GET` | Health status and queued/running job counts |
 | `/api/samples` | `GET` | List pre-packaged sample documents (earnings, contract, bill, memo) |
 | `/api/samples/{id}` | `GET` | Fetch specific sample document text and domain |
@@ -221,8 +220,9 @@ The frontend is a modern Single Page Application (SPA) located in `frontend/`, s
 
 ## 7. Storage, Caching & Path Guard
 
-1. **Strict Non-C: Drive Path Guard**:
-   - `assert_not_c_drive()` rejects any cache, checkpoint, or evaluation directory pointing to the `C:` drive to prevent system partition exhaustion.
+1. **Strict Non-C: Drive Path Guard & Single-Drive Support**:
+   - `assert_not_c_drive()` rejects cache, checkpoint, or evaluation paths pointing directly to `C:` to prevent primary system drive saturation.
+   - For environments with only a `C:` drive, either a virtual mapped drive (`subst D: C:\path`) or setting `EQUISUMM_ALLOW_C_DRIVE=true` in `.env` is fully supported.
    - `EQUISUMM_CACHE_ROOT` defaults to workspace-local `D:/nlp/equiisum/cache` (or non-C: drive).
    - `HF_HOME`, `HF_HUB_CACHE`, and `TORCH_HOME` are routed to the configured cache root before importing Hugging Face libraries.
 2. **Persistent Storage (`RunStore`)**:
@@ -277,13 +277,3 @@ equiisum/
 ├── README.md                 # Project overview and quickstart guide
 └── ARCHITECTURE.md           # System design specification (this document)
 ```
-=======
-| **Verify (Home)** | `Home.py` | Document ingestion, sentence verdict highlighting (green/amber/red), interactive premise inspector, decision banner. |
-| **Fact Check** | `pages/1_Fact_Check.py` | Side-by-side audit table for all numbers and entities with status/issue filtering. |
-| **Attention Explorer** | `pages/2_Attention_Explorer.py` | Cross-attention heatmap, source coverage bar, and token entropy line chart. |
-| **Compare Candidates** | `pages/3_Compare_Candidates.py` | All beam candidates compared with ROUGE-free quality signals and "Why Not #1?" explanation. |
-| **Evaluate** | `pages/4_Evaluate.py` | Benchmark runner comparing ROUGE vs NLI/fact precision; detects metric divergence. |
-| **Embeddings** | `pages/5_Embeddings.py` | 2D t-SNE scatter plot of sentences (max 300 points, cached per session). |
-| **Runs & Settings** | `pages/6_Runs_and_Settings.py` | Run history manager, GPU VRAM allocation monitor, threshold configuration, offline self-test. |
-
->>>>>>> origin/main
